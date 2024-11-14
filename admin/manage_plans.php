@@ -20,7 +20,90 @@ $plans = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <title>Manage Membership Plans</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Body Styling */
+        body {
+            background-color: #1e1e2f;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        h1 {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        /* Links */
+        a {
+            color: #a9a9b8;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin: 1rem;
+            padding: 0.5rem 1.5rem;
+            border-radius: 8px;
+            background-color: #1e1e2f;
+            box-shadow: 6px 6px 12px #141424, -6px -6px 12px #282844;
+            transition: color 0.2s, box-shadow 0.2s;
+        }
+
+        a:hover {
+            color: #fff;
+            box-shadow: 4px 4px 8px #141424, -4px -4px 8px #282844;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            margin-top: 2rem;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: center;
+            border: 1px solid #444;
+        }
+
+        th {
+            background-color: #2e2e3a;
+            box-shadow: inset 4px 4px 8px #141424, inset -4px -4px 8px #282844;
+        }
+
+        td {
+            background-color: #1e1e2f;
+            box-shadow: inset 4px 4px 8px #141424, inset -4px -4px 8px #282844;
+        }
+
+        td a {
+            color: #a9a9b8;
+            text-decoration: none;
+            margin: 0 0.5rem;
+            padding: 0.25rem;
+            border-radius: 4px;
+            background-color: #1e1e2f;
+            box-shadow: 4px 4px 8px #141424, -4px -4px 8px #282844;
+            transition: color 0.2s, box-shadow 0.2s;
+        }
+
+        td a:hover {
+            color: #fff;
+            box-shadow: 2px 2px 4px #141424, -2px -2px 4px #282844;
+        }
+    </style>
 </head>
 
 <body>
@@ -29,8 +112,7 @@ $plans = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <a href="plans_actions/create_plan.php">Create New Plan</a>
 
-
-    <table border="1">
+    <table>
         <tr>
             <th>Plan ID</th>
             <th>Plan Name</th>

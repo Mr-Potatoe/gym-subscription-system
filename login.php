@@ -22,8 +22,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login-register.css">
+
+</head>
+<body>
+
 <form method="POST">
-    <input type="email" name="contact_info" placeholder="Contact Info" required><br>
+    <h1>Login</h1>
+    <input type="email" name="contact_info" placeholder="Email" required><br>
     <input type="password" name="password" placeholder="Password" required><br>
     <button type="submit">Login</button>
+    <p>Don't have an account? <a href="register.php">Register</a></p>
 </form>
+
+</body>
+</html>
+

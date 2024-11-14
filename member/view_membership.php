@@ -31,7 +31,6 @@ $memberships = $stmt->fetchAll(PDO::FETCH_ASSOC); // Fetch all memberships
 // Debugging: Check if memberships are being fetched correctly
 if (empty($memberships)) {
     echo "You don't have any verified memberships or there was an issue fetching your data.";
-    var_dump($stmt->errorInfo());  // Print detailed error information
     exit;
 }
 ?>

@@ -28,23 +28,112 @@ $failedPayments = $stmtFailed->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <title>Verify Payments</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
     <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Body Styling */
+        body {
+            background-color: #1e1e2f;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        h1 {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        a {
+            color: #a9a9b8;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.5rem 1.5rem;
+            border-radius: 8px;
+            background-color: #1e1e2f;
+            box-shadow: 6px 6px 12px #141424, -6px -6px 12px #282844;
+            transition: color 0.2s, box-shadow 0.2s;
+        }
+
+        a:hover {
+            color: #fff;
+            box-shadow: 4px 4px 8px #141424, -4px -4px 8px #282844;
+        }
+
+        /* Payment Categories Styling */
         .payment-category {
             margin-bottom: 20px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            padding: 15px;
+            width: 90%;
+            max-width: 900px;
+            background-color: #2e2e3a;
+            border-radius: 12px;
+            box-shadow: 6px 6px 12px #141424, -6px -6px 12px #282844;
         }
+
         .payment-category h2 {
             margin-top: 0;
+            font-size: 1.4rem;
         }
-        .pending { background-color: #f9f9f9; }
-        .verified { background-color: #e6ffe6; }
-        .failed { background-color: #ffe6e6; }
+
+        .pending { background-color: #1e1e2f; }
+        .verified { background-color: #1e1e2f; }
+        .failed { background-color: #1e1e2f; }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            margin-top: 1rem;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 0.8rem;
+            text-align: left;
+            border: 1px solid #444;
+        }
+
+        th {
+            background-color: #333;
+        }
+
+        td a {
+            color: #1e90ff;
+            text-decoration: none;
+        }
+
+        td a:hover {
+            text-decoration: underline;
+        }
+
         .status-actions {
             display: flex;
             gap: 10px;
+        }
+
+        .status-actions a {
+            color: #fff;
+            padding: 0.5rem 1rem;
+            background-color: #444;
+            border-radius: 8px;
+            box-shadow: 4px 4px 8px #141424, -4px -4px 8px #282844;
+            transition: background-color 0.2s;
+        }
+
+        .status-actions a:hover {
+            background-color: #333;
         }
     </style>
 </head>
@@ -55,7 +144,7 @@ $failedPayments = $stmtFailed->fetchAll(PDO::FETCH_ASSOC);
     <!-- Pending Payments -->
     <div class="payment-category pending">
         <h2>Pending Payments</h2>
-        <table border="1">
+        <table>
             <tr>
                 <th>Payment ID</th>
                 <th>User ID</th>
@@ -83,7 +172,7 @@ $failedPayments = $stmtFailed->fetchAll(PDO::FETCH_ASSOC);
     <!-- Verified Payments -->
     <div class="payment-category verified">
         <h2>Verified Payments</h2>
-        <table border="1">
+        <table>
             <tr>
                 <th>Payment ID</th>
                 <th>User ID</th>
@@ -108,7 +197,7 @@ $failedPayments = $stmtFailed->fetchAll(PDO::FETCH_ASSOC);
     <!-- Failed Payments -->
     <div class="payment-category failed">
         <h2>Failed Payments</h2>
-        <table border="1">
+        <table>
             <tr>
                 <th>Payment ID</th>
                 <th>User ID</th>
@@ -132,3 +221,4 @@ $failedPayments = $stmtFailed->fetchAll(PDO::FETCH_ASSOC);
 
 </body>
 </html>
+

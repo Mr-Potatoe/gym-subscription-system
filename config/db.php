@@ -3,7 +3,7 @@ $host = 'localhost';
 $dbname = 'db-gym';  // No extra space after the database name
 $username = 'root';   // Update with your database username
 $password = '';       // Update with your database password
-$port = '3307';       // Port, if necessary
+$port = '3306';       // Port, if necessary
 
 try {
     // Fixed the issue by removing the space after the database name
